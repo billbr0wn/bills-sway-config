@@ -17,7 +17,7 @@
 set $mod Mod4
 
 # Font
-font Red Hat Mono 14
+font Red Hat Mono 22
 
 # Home row direction keys, like vim
 #set $left h
