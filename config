@@ -17,7 +17,7 @@
 set $mod Mod4
 
 # Font
-font Red Hat Mono 26
+font Red Hat Mono 28
 
 # Home row direction keys, like vim
 #set $left h
@@ -28,7 +28,7 @@ font Red Hat Mono 26
 ###Your preferred terminal emulator
 set $term kitty
 ###browser
-set $browser firefox
+set $browser chromium-browser
 ###file manager
 set $file-manager pcmanfm
 
@@ -78,12 +78,14 @@ output * bg ~/.config/sway/blender-sway.png fill
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
     # Despite the name, also works for non-floating windows.
+
     # Change normal to inverse to use left mouse button for resizing and right
+
     # mouse button for dragging.
     floating_modifier $mod normal
 
-    # Reload the configuration file
-    bindsym $mod+c reload
+    #  the configuration file
+    bindsym $mod+Shift+c reload
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed exit. Do you really want to exit sway?' -B 'Yes, exit sway' 'swaymsg exit'
@@ -134,14 +136,16 @@ output * bg ~/.config/sway/blender-sway.png fill
 # Layout stuff:
 #
     # You can "split" the current object of your focus with
+
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
     bindsym $mod+h splith
     bindsym $mod+v splitv
+
     # Switch the current container between different layout styles
-    #bindsym $mod+s layout stacking
+    bindsym $mod+s layout toggle split
     bindsym $mod+w layout tabbed
-    bindsym $mod+e layout toggle split
+
 
     # Make the current focus fullscreen
     bindsym $mod+f fullscreen
@@ -186,8 +190,8 @@ bindsym $mod+r mode "resize"
 
 # Set inner/outer gaps
 smart_gaps off
-gaps inner 4
-gaps outer 4
+gaps inner 6
+gaps outer 6
 
 
 #------------------------------(change title bar size)-------------------------
@@ -195,7 +199,7 @@ gaps outer 4
 #default_floating_border normal
 font pango:Inconsolata 14
 #titlebar_padding 2
-#titlebar_border_thickness 0
+#titlebar_border_thickness 2
 
 
 
@@ -221,5 +225,5 @@ bar {
      swaybar_command waybar
 }
 
-xwayland disable
+xwayland enable
 
